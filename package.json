@@ -1,0 +1,31 @@
+{
+  "name": "useful-components-kit",
+  "version": "0.0.1",
+  "description": "Frequently used components in activity pages",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://gitlab.corp.youdao.com/webfront-xuetang/useful-components-kit.git"
+  },
+  "keywords": [
+    "vue",
+    "components"
+  ],
+  "author": "shenlvmeng",
+  "dependencies": {
+    "vue": "^2.2.6"
+  },
+  "devDependencies": {
+    "babel-core": "^6.24.1",
+    "babel-loader": "^6.4.1",
+    "babel-preset-latest": "^6.24.1",
+    "css-loader": "^0.28.0",
+    "vue-loader": "^11.3.4",
+    "vue-template-compiler": "^2.2.6",
+    "webpack": "^2.4.1",
+    "webpack-dev-server": "^2.4.2"
+  }
+}
