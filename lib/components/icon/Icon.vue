@@ -14,8 +14,11 @@
         required: true
       },
       color: String,
-      size: Number,
-      aria: Boolean
+      size: [Number, String],
+      aria: {
+        type: Boolean,
+        default: true
+      }
     },
     computed: {
       classes () {
@@ -31,6 +34,7 @@
         if (this.color) {
           styles.color = this.color;
         }
+        return styles;
       }
     }
   }
