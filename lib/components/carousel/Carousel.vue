@@ -8,7 +8,7 @@
       <Icon
         type="angle-left"
         :aria="false"
-      >
+      ></Icon>
     </button>
     <div :class="prefix + '-list'">
       <div
@@ -25,12 +25,12 @@
       <Icon
         type="angle-right"
         :aria="false"
-      >
+      ></Icon>
     </button>
     <ul :class="naviClasses">
       <li
         v-for="(s, i) in slides"
-        :class="i == currentIndex ? prefix + '-active' : ''"
+        :class="i == currentIndex ? prefix + '-navi-active' : ''"
         @click="handleNavi('click', i)"
         @mouseover="handleNavi('hover', i)"
       >
@@ -42,7 +42,7 @@
 </template>
 
 <script>
-  import Icon from '../../icon/index.js';
+  import Icon from '../icon/index.js';
 
   const prefix = "uck-carousel";
 
@@ -51,7 +51,7 @@
     props: {
       autoplay: {
         type: Boolean,
-        default: true
+        default: false
       },
 
       speed: {
@@ -60,7 +60,7 @@
         validator (value) {
           return value > 500 && value < 10000;
         }
-      }
+      },
 
       arrow: {
         type: String,
@@ -72,11 +72,11 @@
 
       navi: {
         type: String,
-        default: "inline",
+        default: "inside",
         validator (value) {
           return ["inside", "outside", "none"].indexOf(value) != -1;
         }
-      }
+      },
 
       trigger: {
         type: String,
@@ -89,6 +89,7 @@
     },
     data () {
       return {
+        prefix: prefix,
         // length of children slides
         length: 0,
         // current slide index
@@ -96,9 +97,11 @@
         // current slide offset
         currentOffset: 0,
         // setInterval timer
-        timer: null
+        timer: null,
         // width of each item
-        itemWidth: null
+        itemWidth: 0,
+        // total width of carousel width
+        totalWidth: 0
       }
     },
     methods: {
@@ -127,13 +130,24 @@
         }
       },
 
+      // set children's width
+      setChildWidth () {
+        this.$children.forEach((child) => {
+          if (typeof child.adjust == "function") {
+            child.adjust(this.itemWidth);
+          }
+        });
+      },
+
       refreshOffset () {
         this.$nextTick(() => {
           this.currentOffset = this.currentIndex * this.itemWidth;
         });
-      }
+      },
+
       step (step) {
-        this.currentIndex = (this.currentIndex + step) % this.length;
+        // be careful for the negative trap
+        this.currentIndex = (this.currentIndex + step + this.length) % this.length;
       }
 
     },
@@ -146,9 +160,13 @@
       },
       trackStyle () {
         return {
+          width: `${this.totalWidth}px`,
           transform: `translateX(-${this.currentOffset}px)`,
           transition: `transform 500ms`
         }
+      },
+      slides () {
+        return Array.from(Array(this.length));
       }
     },
     watch: {
@@ -164,12 +182,17 @@
       }
     },
     mounted () {
-      this.length = this.$children.length;
+      this.length = this.$el.children.length;
       this.itemWidth = this.$el.clientWidth;
+      this.totalWidth = this.itemWidth * this.length;
+      this.setChildWidth();
       this.setAutoplay();
     },
     beforeDestroy () {
       window.clearInterval(this.timer);
+    },
+    components: {
+      Icon: Icon
     }
   }
 </script>

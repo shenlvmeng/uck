@@ -13,8 +13,14 @@
     name: "CarouselItem",
     data () {
       return {
-        width: "100%",
+        prefix: prefix,
+        width: "0",
         height: "auto"
+      }
+    },
+    methods: {
+      adjust(width) {
+        this.width = `${width}px`;
       }
     },
     computed: {
