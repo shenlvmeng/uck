@@ -40,3 +40,49 @@ After your work, just `webpack` it.
 ```bash
 npm run build
 ```
+
+## Development Guide
+
+- All the components lie in `lib/components/`. Use `index.js` to export it.
+- Related CSS and resources files are in `lib/assets/`. When you need to update components' style, just modify `common.css` in `lib/assets`
+
+### carousel
+
+Carousel is the slideshow for cycling through a series of contents. This component leverages transform3D to make it.
+
+**Please use carousel together with carousel-item.**
+
+#### props
+
+属性 | 说明 | 类型 | 默认值
+----|-----|------|-----
+autoplay|是否自动播放|Boolean|true
+speed|自动播放速度，500到10000之间|Number|3000
+navi|下方导航条显示位置，可选值`inside` `outside` `none`|String|`inside`
+trigger|导航条触发方式，可选值`hover` `click`|String|`hover`
+arrow|切换箭头显示时机，可选值`hover` `always` `never`|String|`hover`
+
+#### events
+
+事件名|说明|返回值
+-----|--—-|----
+shift|幻灯片切换时触发|oldVal, val
+
+#### carousel-item
+
+Carousel-item is used for the container of each content of carousel.
+
+**Please use carousel-item together with carousel**
+
+### Icon
+
+Useful icon component for some situations, for example left arrow.
+
+#### props
+
+属性 | 说明 | 类型 | 默认值
+----|-----|------|-----
+type|图标类型(必填)，参考[Font Awesome](http://fontawesome.io/icons/)|String|无
+color|图标颜色|String|`#000`
+size|图标大小|Number|使用场景的字体大小
+aria|`aria-hidden`的属性值|Boolean
