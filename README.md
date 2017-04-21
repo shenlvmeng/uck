@@ -65,7 +65,7 @@ arrow|切换箭头显示时机，可选值`hover` `always` `never`|String|`hover
 #### events
 
 事件名|说明|返回值
------|--—-|----
+-----|----|----
 shift|幻灯片切换时触发|oldVal, val
 
 #### carousel-item
@@ -76,7 +76,7 @@ Carousel-item is used for the container of each content of carousel.
 
 ### Icon
 
-Useful icon component for some situations, for example left arrow.
+Useful icon component for some situations, for example left arrow. This component should work together with FontAwesome CSS and font.
 
 #### props
 
@@ -84,5 +84,5 @@ Useful icon component for some situations, for example left arrow.
 ----|-----|------|-----
 type|图标类型(必填)，参考[Font Awesome](http://fontawesome.io/icons/)|String|无
 color|图标颜色|String|`#000`
-size|图标大小|Number|使用场景的字体大小
-aria|`aria-hidden`的属性值|Boolean
+size|图标大小|Number\| String|使用场景的字体大小
+aria|`aria-hidden`的属性值|Boolean|`true`
