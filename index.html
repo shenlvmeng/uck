@@ -5,11 +5,35 @@
     <meta name="viewport" content="width=device-width, maximum-scale=1.0, minimum-scale=1, user-scalable=no">
     <title>UCK测试页面</title>
     <link rel="stylesheet" href="/lib/assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/lib/assets/css/common.css">
     <!--link rel="stylesheet" href="/src/assets/css/font-awesome.min.css"-->
+    <!--link rel="stylesheet" href="/src/assets/css/common.css"-->
+    <style type="text/css" media="screen">
+      .demo-carousel {
+        height: 250px;
+        line-height: 250px;
+        background-color: steelblue;
+        font-size: 20px;
+        text-align: center;
+      }
+    </style>
   </head>
   <body>
     <div id="app">
-
+      <carousel :autoplay="true" :speed="1500" navi="inside" trigger="hover" arrow="hover">
+        <carousel-item>
+          <div class="demo-carousel">1</div>
+        </carousel-item>
+        <carousel-item>
+          <div class="demo-carousel">2</div>
+        </carousel-item>
+        <carousel-item>
+          <div class="demo-carousel">3</div>
+        </carousel-item>
+        <carousel-item>
+          <div class="demo-carousel">4</div>
+        </carousel-item>
+      </carousel>
     </div>
     <script src="/dist/build.js"></script>
   </body>
