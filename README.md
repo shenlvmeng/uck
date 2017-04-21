@@ -43,6 +43,10 @@ npm run build
 
 ## Development Guide
 
+First, import what you need in `lib/src/main.js`. Then，write your own module and compose them in the `index.html`.
+
+**Notice: It's likely that you will modify `lib/assets/common.css`.**
+
 - All the components lie in `lib/components/`. Use `index.js` to export it.
 - Related CSS and resources files are in `lib/assets/`. When you need to update components' style, just modify `common.css` in `lib/assets`
 
