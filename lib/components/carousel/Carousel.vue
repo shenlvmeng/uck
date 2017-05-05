@@ -1,6 +1,8 @@
 <template>
   <!--Carousel-->
-  <div :class="prefix">
+  <div
+    :class="prefix"
+  >
     <button
       :class="arrowClasses" class="left"
       @click="handleArrow(-1)"
@@ -10,7 +12,9 @@
         :aria="false"
       ></Icon>
     </button>
-    <div :class="prefix + '-list'">
+    <div
+      :class="prefix + '-list'"
+    >
       <div
         :class="prefix + '-track'"
         :style="trackStyle"
@@ -19,7 +23,8 @@
       </div>
     </div>
     <button
-      :class="arrowClasses" class="right"
+      :class="arrowClasses"
+      class="right"
       @click="handleArrow(1)"
     >
       <Icon
@@ -27,7 +32,9 @@
         :aria="false"
       ></Icon>
     </button>
-    <ul :class="naviClasses">
+    <ul
+      :class="naviClasses"
+    >
       <li
         v-for="(s, i) in slides"
         :class="i == currentIndex ? prefix + '-navi-active' : ''"
