@@ -2,6 +2,35 @@ html, body, ul {
   margin: 0;
   padding: 0;
 }
+
+/* Form part */
+.uck-form,
+.uck-form-input,
+.uck-form-submit {
+  display: block;
+}
+.uck-form {
+  padding: 0.5em 1em;
+}
+.uck-form-input {
+  padding: 0.5em 0;
+  line-height: 2em;
+}
+.uck-form-input-checkcode {
+  position: relative;
+}
+.uck-form-submit {
+  margin: 0 auto;
+  width: 10em;
+  padding: 0.5em 2em;
+}
+.uck-form-hidden {
+  width: 0;
+  height: 0;
+  border: none;
+}
+/* End Form part */
+
 /* Carousel and Carousel-item part */
 .uck-carousel {
   position: relative;
@@ -13,7 +42,8 @@ html, body, ul {
   float: left;
   height: auto;
 }
-.uck-carousel-list, .uck-carousel-track {
+.uck-carousel-list,
+.uck-carousel-track {
   display: block;
   position: relative;
   overflow: hidden;

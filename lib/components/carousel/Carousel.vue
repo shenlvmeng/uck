@@ -13,10 +13,10 @@
       ></Icon>
     </button>
     <div
-      :class="prefix + '-list'"
+      :class="`${prefix}-list`"
     >
       <div
-        :class="prefix + '-track'"
+        :class="`${prefix}-track`"
         :style="trackStyle"
       >
         <slot></slot>
@@ -37,7 +37,7 @@
     >
       <li
         v-for="(s, i) in slides"
-        :class="i == currentIndex ? prefix + '-navi-active' : ''"
+        :class="i == currentIndex ? `${prefix}-navi-active` : ''"
         @click="handleNavi('click', i)"
         @mouseover="handleNavi('hover', i)"
       >
