@@ -1,60 +1,55 @@
 # useful-components-kit
 
-A collection of frequently used functional components kit realized by Vue.js.
+基于Vue.js的对已有常用功能的抽象封装。
 
-List of components in this version:
+当前计划中的抽象功能:
 
 - Carousel(轮播图)
 - Slider(滑块)
-- CAPTCHA(手机验证码)
-- rlog - PV part
-- rlog - action part
+- captcha(手机验证码)
+- rlog - PV部分
+- rlog - 动作部分
 
-Some of the designs are inspired by [iView UI](https://github.com/iview/iview)
+部分设计参考于[iView UI](https://github.com/iview/iview)和[Element UI](http://element.eleme.io/#/zh-CN)
 
 ---
 
-## Usage
+## 用法
 
-This kit needs secondary development for deployment. By now, you can follow the steps below.
+功能抽象组件用于完成逻辑或交互复杂的活动页面甚至业务页面，需要基于组件二次开发。
+
+### 使用者
 
 ```bash
 git clone https://gitlab.corp.youdao.com/webfront-xuetang/useful-components-kit.git
 cd useful-components-kit
 ```
 
-In the faraway future, maybe you can use the following command
+组件资源位于`lib/components`路径下。
+
+- 在`src/`下开始工作，书写自己的组件，路由等功能
+- 在`src/main.js`中完成组织工作
+- 在`lib/assets/common.css`中修改组件默认样式，注意命名格式
+- 在`index.html`根据需要添加外部js等资源文件
 
 ```bash
-npm install yuck --save
-```
-
-The resources are in `lib/`. You can start your work from `src/` and debug from
-
-```bash
+npm install
 npm run dev
 ```
 
-After your work, just `webpack` it.
+完成工作后执行`npm run build`打包。
 
-```bash
-npm run build
-```
+### 开发者
 
-## Development Guide
+有新组件出现时，在`lib/components`目录下新建文件夹添加新组件。在`lib/assets/common.css`中添加附属的样式。
 
-First, import what you need in `lib/src/main.js`. Then，write your own module and compose them in the `index.html`.
-
-**Notice: It's likely that you will modify `lib/assets/common.css`.**
-
-- All the components lie in `lib/components/`. Use `index.js` to export it.
-- Related CSS and resources files are in `lib/assets/`. When you need to update components' style, just modify `common.css` in `lib/assets`
+## 组件
 
 ### carousel
 
-Carousel is the slideshow for cycling through a series of contents. This component leverages transform3D to make it.
+轮播图，通过`transform`实现。（*日后可能会改成更自然的方式*）
 
-**Please use carousel together with carousel-item.**
+**请配合carousel-item使用**
 
 #### props
 
@@ -74,13 +69,13 @@ shift|幻灯片切换时触发|oldVal, val
 
 #### carousel-item
 
-Carousel-item is used for the container of each content of carousel.
+轮播图中的每张幻灯片
 
-**Please use carousel-item together with carousel**
+**请配合carousel使用**
 
 ### Icon
 
-Useful icon component for some situations, for example left arrow. This component should work together with FontAwesome CSS and font.
+借助FontAwesome实现的icon font.
 
 #### props
 
@@ -88,5 +83,5 @@ Useful icon component for some situations, for example left arrow. This componen
 ----|-----|------|-----
 type|图标类型(必填)，参考[Font Awesome](http://fontawesome.io/icons/)|String|无
 color|图标颜色|String|`#000`
-size|图标大小|Number\| String|使用场景的字体大小
+size|图标大小|Number, String|使用场景的字体大小
 aria|`aria-hidden`的属性值|Boolean|`true`
