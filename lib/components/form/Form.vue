@@ -181,7 +181,7 @@
             setTimeout(countDown, 1000);
           }, (err) => {
             // error callback
-            console.log(`验证码获取失败。网络错误：${err}`);
+            console.log("验证码获取失败。网络错误：", err);
           });
         }
       },
@@ -207,7 +207,7 @@
           }
         }, (err) => {
           // error callback
-          console.log(`核对验证码失败。错误：${err}`);
+          console.log('核对验证码失败。错误：', err);
         });
       },
       // 提交表单到后台表单系统

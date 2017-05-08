@@ -2,7 +2,6 @@ html, body, ul {
   margin: 0;
   padding: 0;
 }
-
 /* Form part */
 .uck-form,
 .uck-form-input,
@@ -123,3 +122,13 @@ li.uck-carousel-navi-active button {
   display: none;
 }
 /* End Carousel and Carousel-item part */
+
+/* Link part*/
+.uck-link:hover,
+.uck-link:visited,
+.uck-link:link,
+.uck-link:active {
+  text-decoration: none;
+  color: inherit;
+}
+/* End Link part*/
