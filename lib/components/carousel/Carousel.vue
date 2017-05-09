@@ -1,10 +1,10 @@
 <template>
-  <!--Carousel-->
   <div
     :class="prefix"
   >
     <button
-      :class="arrowClasses" class="left"
+      class="left"
+      :class="arrowClasses"
       @click="handleArrow(-1)"
     >
       <Icon
@@ -45,7 +45,6 @@
       </li>
     </ul>
   </div>
-  <!--end Carousel-->
 </template>
 
 <script>
@@ -96,7 +95,7 @@
     },
     data () {
       return {
-        prefix: prefix,
+        prefix,
         // length of children slides
         length: 0,
         // current slide index

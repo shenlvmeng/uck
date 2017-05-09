@@ -1,5 +1,4 @@
 <template>
-  <!--Form-->
   <div
     :class="prefix"
   >
@@ -87,7 +86,6 @@
       id="hidden_frame"
     ></iframe>
   </div>
-  <!--end Form-->
 </template>
 
 <script>
@@ -119,7 +117,7 @@
     },
     data () {
       return {
-        prefix: prefix,
+        prefix,
         phoneNum: "",
         checkCode: "",
         userName: "",
@@ -244,6 +242,3 @@
     }
   }
 </script>
-
-<style>
-</style>

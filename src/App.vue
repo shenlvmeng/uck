@@ -1,5 +1,19 @@
 <template>
   <div>
+    <div class="slider">
+      <Slider
+        :start="0"
+        :end="150"
+        :min="50"
+        :max="100"
+        :disabled="false"
+        :hasHint="true"
+        :hinter="hinter"
+        :step="2"
+        @change="sliderChange"
+      >
+      </Slider>
+    </div>
     <Alink
       to="http://youdao.com"
       :_blank="true"
@@ -29,6 +43,7 @@
 <script>
   import Form from '../lib/components/form/'
   import Link from '../lib/components/link/'
+  import Slider from '../lib/components/slider/'
   import { Carousel, CarouselItem } from '../lib/components/carousel'
 
   export default {
@@ -44,16 +59,26 @@
           this.count++;
           console.log(`接收到点击事件。count: ${this.count}`);
         };
+      },
+      hinter(val) {
+        return `Value:${val}`;
+      },
+      sliderChange({ value }) {
+        console.log(value);
       }
     },
     components: {
-      Carousel: Carousel,
+      Carousel,
       Phoneform: Form,
       Carouselitem: CarouselItem,
-      Alink: Link
+      Alink: Link,
+      Slider
     }
   }
 </script>
-
-<style>
+<style scoped>
+  .slider {
+    width: 500px;
+    padding: 10px 0;
+  }
 </style>

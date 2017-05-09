@@ -1,9 +1,7 @@
 <template>
-  <!--Carsousel Item-->
   <div :class="prefix" :style="style">
     <slot></slot>
   </div>
-  <!--end Carousel Item-->
 </template>
 
 <script>
@@ -13,7 +11,7 @@
     name: "CarouselItem",
     data () {
       return {
-        prefix: prefix,
+        prefix,
         width: "0",
         height: "auto"
       }

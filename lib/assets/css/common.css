@@ -123,7 +123,7 @@ li.uck-carousel-navi-active button {
 }
 /* End Carousel and Carousel-item part */
 
-/* Link part*/
+/* Link part */
 .uck-link:hover,
 .uck-link:visited,
 .uck-link:link,
@@ -131,4 +131,69 @@ li.uck-carousel-navi-active button {
   text-decoration: none;
   color: inherit;
 }
-/* End Link part*/
+/* End Link part */
+
+/* Slider part */
+.uck-slider {
+  position: relative;
+  width: 100%;
+  height: 5px;
+  border: none;
+  border-radius: 2px;
+  background-color: #ddd;
+}
+.uck-slider-track {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background-color: #1cc16d;
+  transition: width .2s;
+}
+.uck-slider-track.disabled {
+  background-color: #ccc;
+}
+.uck-slider-btn {
+  position: absolute;
+  top: -3px;
+  width: 12px;
+  height: 12px;
+  border-radius: 6px;
+  background-color: #1cc16d;
+  transition: all .2s;
+}
+.uck-slider-btn.hover,
+.uck-slider-btn.down {
+  background-color: #0aa05b;
+  top: -5px;
+  width: 16px;
+  height: 16px;
+  border-radius: 8px;
+}
+.uck-slider-btn.hover {
+  cursor: -webkit-grab;
+}
+.uck-slider-btn.down {
+  cursor: -webkit-grabbing;
+}
+.uck-slider-btn.disabled {
+  background-color: #ddd;
+  cursor: not-allowed;
+}
+.uck-slider-hint {
+  display: none;
+  top: 18px;
+  left: -4px;
+  position: absolute;
+  padding: 0 5px;
+  height: 2em;
+  border-radius: 4px;
+  line-height: 2em;
+  background: rgba(30, 31, 32, 0.8);
+  color: #fff;
+  transition: all .2s;
+}
+.uck-slider-btn:hover .uck-slider-hint{
+  display: block;
+}
+/* End slider part */

@@ -36,7 +36,7 @@
     },
     data() {
       return {
-        prefix: prefix
+        prefix
       }
     },
     methods: {
@@ -93,5 +93,3 @@
     }
   }
 </script>
-<style>
-</style>
