@@ -17,6 +17,7 @@
       :width="width"
       :disabled="disabled"
       @change="handleChange"
+      @release="handleRelease"
     >
       <div
         v-if="hasHint"
@@ -111,6 +112,9 @@
           const currVal = Math.min(lastVal + stepVal, this.sliderMax);
           this.value = currVal;
         }
+      },
+      handleRelease() {
+        this.$emit('change', {value: this.value});
       }
     },
     created() {

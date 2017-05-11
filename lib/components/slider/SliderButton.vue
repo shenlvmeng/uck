@@ -67,7 +67,7 @@
         this.down = true;
         this.lastVal = this.value;
         this.lastX = e.screenX;
-        this.btn.addEventListener('mousemove', this.handleDrag);
+        document.body.addEventListener('mousemove', this.handleDrag);
 
       },
       handleTouch(e) {
@@ -77,7 +77,7 @@
         this.down = true;
         this.lastVal = this.value;
         this.lastX = e.targetTouches[0].screenX;
-        this.btn.addEventListener('touchmove', this.handleDrag);
+        document.body.addEventListener('touchmove', this.handleDrag);
 
       },
       handleDrag(e) {
@@ -93,8 +93,9 @@
       },
       clear() {
         this.down = false;
-        this.btn.removeEventListener('mousemove', this.handleDrag);
-        this.btn.removeEventListener('touchmove', this.handleDrag);
+        document.body.removeEventListener('mousemove', this.handleDrag);
+        document.body.removeEventListener('touchmove', this.handleDrag);
+        this.$emit('release');
       }
     },
     computed: {

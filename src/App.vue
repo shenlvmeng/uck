@@ -9,7 +9,7 @@
         :disabled="false"
         :hasHint="true"
         :hinter="hinter"
-        :step="2"
+        :step="5"
         @change="sliderChange"
       >
       </Slider>

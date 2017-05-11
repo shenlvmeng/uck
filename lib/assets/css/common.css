@@ -191,6 +191,7 @@ li.uck-carousel-navi-active button {
   line-height: 2em;
   background: rgba(30, 31, 32, 0.8);
   color: #fff;
+  font-size: 10px;
   transition: all .2s;
 }
 .uck-slider-btn:hover .uck-slider-hint{
