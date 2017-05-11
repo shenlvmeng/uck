@@ -1,12 +1,18 @@
 <template>
   <div>
     <Popup></Popup>
-    <Popup>
+    <Popup
+      :hidden="popup"
+      @click="handlePopup"
+    >
       <span slot="trigger">Click me</span>
       <Phoneform
         pvkey="test"
         slot="content">
       </Phoneform>
+      <span slot="content">
+        You can aslo close this popup by click <a href="javascript:;" @click="closepopup">this</a>.
+      </span>
     </Popup>
     <div class="slider">
       <Slider
@@ -59,7 +65,8 @@
     name: "app",
     data() {
       return {
-        count: 0
+        count: 0,
+        popup: true
       }
     },
     methods: {
@@ -74,6 +81,12 @@
       },
       sliderChange({ value }) {
         console.log(value);
+      },
+      closepopup() {
+        this.popup = true;
+      },
+      handlePopup({ hidden }) {
+        this.popup = hidden;
       }
     },
     components: {

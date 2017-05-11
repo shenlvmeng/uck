@@ -68,6 +68,11 @@
         e.stopPropagation();
       }
     },
+    watch: {
+      hidden(val) {
+        this.isHidden = val;
+      }
+    },
     components: {
       Icon
     }
