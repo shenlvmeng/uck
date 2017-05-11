@@ -212,10 +212,10 @@
       submit () {
         this.$refs.form.submit();
         this.$emit('success', {
-          num: phoneNum,
-          code: checkCode,
-          name: userName,
-          addr: userAddr
+          num: this.phoneNum,
+          code: this.checkCode,
+          name: this.userName,
+          addr: this.userAddr
         });
         // 有计数功能时才会发送下面的请求
         if (this.countKey !== "") {

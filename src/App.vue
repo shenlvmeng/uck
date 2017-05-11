@@ -36,7 +36,10 @@
     >
       Youdao
     </Alink>
-    <Phoneform pvkey="test" ></Phoneform>
+    <Phoneform
+      pvkey="test"
+      @success="handleSuccess"
+    ></Phoneform>
     <Carousel :autoplay="true" :speed="1500" navi="inside" trigger="hover" arrow="hover">
       <Carouselitem>
         <div class="demo-carousel">1</div>
@@ -87,6 +90,9 @@
       },
       handlePopup({ hidden }) {
         this.popup = hidden;
+      },
+      handleSuccess({ num, name, code, addr }) {
+        alert(`Wow, success!${num}, ${name}, ${code}, ${addr}`);
       }
     },
     components: {
