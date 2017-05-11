@@ -1,5 +1,13 @@
 <template>
   <div>
+    <Popup></Popup>
+    <Popup>
+      <span slot="trigger">Click me</span>
+      <Phoneform
+        pvkey="test"
+        slot="content">
+      </Phoneform>
+    </Popup>
     <div class="slider">
       <Slider
         :start="0"
@@ -44,6 +52,7 @@
   import Form from '../lib/components/form/'
   import Link from '../lib/components/link/'
   import Slider from '../lib/components/slider/'
+  import Popup from '../lib/components/popup';
   import { Carousel, CarouselItem } from '../lib/components/carousel'
 
   export default {
@@ -72,7 +81,8 @@
       Phoneform: Form,
       Carouselitem: CarouselItem,
       Alink: Link,
-      Slider
+      Slider,
+      Popup
     }
   }
 </script>

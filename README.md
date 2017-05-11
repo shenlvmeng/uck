@@ -8,6 +8,7 @@
 - Form 表单提交部分
 - Icon 图标
 - Link 链接标签
+- Popup 弹窗
 - Slider 滑块
 
 部分设计参考于[iView UI](https://github.com/iview/iview)和[Element UI](http://element.eleme.io/#/zh-CN)
@@ -79,11 +80,15 @@ arrow|切换箭头显示时机，可选值`hover` `always` `never`|String|`hover
 -----|----|----
 shift|幻灯片切换时触发|oldVal: 改变前的索引, val:改变后的索引
 
-#### Carousel-item
+### Carousel-item
 
 轮播图中的每张幻灯片，幻灯片内容内容放在标签内。
 
 **配合`carousel`使用**
+
+#### slot
+
+幻灯片内容插槽，插入实际内容。
 
 ### Icon
 
@@ -133,6 +138,10 @@ rlog|rlog动作信息|String|
 
 值得注意的是，`onClick`在传入时需要注意`this`指向的问题。
 
+#### slot
+
+链接内容插槽，插入实际内容，如文本，图片等。
+
 ### Slider
 
 滑动条和滑块。通过拖动滑动条在一个事先指定的区间内进行选择。
@@ -156,3 +165,31 @@ hinter|格式化Tooltip显示内容|Function(value)|
 -----|----|----
 change|值改变时触发（仅在鼠标释放和touch结束时触发）|value: 改变后的值
 
+#### slot
+
+滑块内容插槽。用于实现更复杂的滑块样式。
+
+### Popup
+
+弹窗。点击页面元素出现的提示信息和额外内容。
+
+#### props
+
+属性 | 说明 | 类型 | 默认值
+----|-----|------|-----
+className|包裹触发弹窗的元素的类名，用于修饰整体样式|String|
+hidden|是否显示弹窗内容，用于手动控制|Boolean|`true`
+
+#### events
+
+事件名|说明|回调参数
+-----|----|----
+click|处理弹窗内的点击事件，用于通知外部父组件当前弹窗情况|hidden: 当前是否显示弹窗内容
+
+#### slot
+
+插槽名|说明|默认值
+-----|---|-----
+trigger|触发弹窗的元素内容|见示例效果
+close|弹窗内的关闭按钮内容|见示例效果
+content|弹窗内容体|见示例效果
