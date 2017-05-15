@@ -48,6 +48,7 @@
       className: {
         type: String
       },
+
       hidden: {
         type: Boolean,
         default: true

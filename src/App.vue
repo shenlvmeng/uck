@@ -1,5 +1,24 @@
 <template>
   <div>
+    <Countdown
+      :length="10"
+      :control="flag"
+      @tick="handleTick"
+      @timeout="handleTimeout"
+    >
+      {{ timer }}
+      <button
+        @click="handleCountdownStart"
+      >
+        {{ status === 2 ? "Pause" :
+            ( status === 0 ? "Restart" : "Start")}}
+      </button>
+      <button
+        @click="handleCountdownStop"
+      >
+        Stop
+      </button>
+    </Countdown>
     <Popup></Popup>
     <Popup
       :hidden="popup"
@@ -58,18 +77,22 @@
 </template>
 
 <script>
-  import Form from '../lib/components/form/'
-  import Link from '../lib/components/link/'
-  import Slider from '../lib/components/slider/'
+  import Form from '../lib/components/form/';
+  import Link from '../lib/components/link/';
+  import Slider from '../lib/components/slider/';
   import Popup from '../lib/components/popup';
-  import { Carousel, CarouselItem } from '../lib/components/carousel'
+  import Countdown from '../lib/components/countdown/';
+  import { Carousel, CarouselItem } from '../lib/components/carousel';
 
   export default {
     name: "app",
     data() {
       return {
         count: 0,
-        popup: true
+        popup: true,
+        timer: 10,
+        flag: 0,
+        status: 1
       }
     },
     methods: {
@@ -93,6 +116,29 @@
       },
       handleSuccess({ num, name, code, addr }) {
         alert(`Wow, success!${num}, ${name}, ${code}, ${addr}`);
+      },
+      handleTick({ remain }) {
+        this.timer = remain;
+      },
+      handleTimeout() {
+        this.flag = 0;
+        this.status = 0;
+        alert("答题时间到");
+      },
+      handleCountdownStop() {
+        this.flag = 0;
+        this.status = 0;
+        this.timer = 10;
+      },
+      handleCountdownStart() {
+        if (this.status === 2) {
+          this.flag = this.status = 1;
+        } else if (this.status === 1) {
+          this.flag = this.status = 2;
+        } else {
+          this.flag = 3;
+          this.status = 2;
+        }
       }
     },
     components: {
@@ -101,7 +147,8 @@
       Carouselitem: CarouselItem,
       Alink: Link,
       Slider,
-      Popup
+      Popup,
+      Countdown
     }
   }
 </script>

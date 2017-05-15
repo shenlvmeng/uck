@@ -5,7 +5,8 @@
 当前已有的组件:
 
 - Carousel 轮播图
-- Form 表单提交部分
+- Countdown 倒计时
+- Form 表单
 - Icon 图标
 - Link 链接标签
 - Popup 弹窗
@@ -135,8 +136,11 @@ to|跳转链接**（必填）**|String|无
 router|前端路由|Object|`null`
 onClick|点击事件处理函数|Function|
 rlog|rlog动作信息|String|
+_blank|是否在新页面打开|Boolean|`true`
 
-值得注意的是，`onClick`在传入时需要注意`this`指向的问题。
+值得注意的是
+1. `to`填写的路由根据Vue-router的工作模式决定（hash或history）
+2. `onClick`在传入时需要注意`this`指向的问题。
 
 #### slot
 
@@ -193,3 +197,29 @@ click|处理弹窗内的点击事件，用于通知外部父组件当前弹窗�
 trigger|触发弹窗的元素内容|见示例效果
 close|弹窗内的关闭按钮内容|见示例效果
 content|弹窗内容体|见示例效果
+
+### Countdown
+
+倒计时。承载倒计时功能。
+
+#### props
+
+属性 | 说明 | 类型 | 默认值
+----|-----|------|-----
+interval|倒计时的间隔，单位：秒。需要大于0.5小于60|Number|1
+length|倒计时的次数**（必填）**，需要是大于0的整数|Number|无
+control|当前倒计时状态控制开关**（必填）**|Number，0: stop，1: pause，2: play，3: replay|无
+
+#### events
+
+事件名|说明|回调参数
+-----|----|----
+start|倒计时开始|remain: 当前剩余倒计时次数
+pause|倒计时暂停|同上
+stop|倒计时停止|无
+tick|每次倒计时完成|remain: 当前剩余倒计时次数
+timeout|倒计时自然结束|无
+
+#### slot
+
+倒计时界面内容插槽，用于填充主体内容

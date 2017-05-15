@@ -231,3 +231,8 @@ li.uck-carousel-navi-active button {
   cursor: pointer;
 }
 /* End popup part */
+/* Countdown part*/
+.uck-countdown {
+  font-size: 25px;
+}
+/* End Countdown part*/
