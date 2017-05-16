@@ -11,6 +11,7 @@
 - Link 链接标签
 - Popup 弹窗
 - Slider 滑块
+- Tabs 选项卡
 
 部分设计参考于[iView UI](https://github.com/iview/iview)和[Element UI](http://element.eleme.io/#/zh-CN)
 

@@ -73,7 +73,7 @@ success|提交成功|num: 手机号, code: 验证码, name: 姓名, addr: 住址
 
 属性 | 说明 | 类型 | 默认值
 ----|-----|------|-----
-to|跳转链接**（必填）**|String|无
+to|跳转链接**（必填）**|String/Boolean|无
 router|前端路由|Object|`null`
 onClick|点击事件处理函数|Function|
 rlog|rlog动作信息|String|
@@ -81,7 +81,8 @@ _blank|是否在新页面打开|Boolean|`true`
 
 值得注意的是
 1. `to`填写的路由根据Vue-router的工作模式决定（hash或history）
-2. `onClick`在传入时需要注意`this`指向的问题。
+2. 在前端路由假链接且未使用前端路由时，为`to`指定`false`
+3. `onClick`在传入时需要注意`this`指向的问题。
 
 #### slot
 
@@ -145,11 +146,11 @@ content|弹窗内容体|见示例效果
 
 #### props
 
-属性 | 说明 | 类型 | 默认值
-----|-----|------|-----
-interval|倒计时的间隔，单位：秒。需要大于0.5小于60|Number|1
-length|倒计时的次数**（必填）**，需要是大于0的整数|Number|无
-control|当前倒计时状态控制开关**（必填）**|Number，0: stop，1: pause，2: play，3: replay|无
+属性 | 说明 | 类型 | 可选值 | 默认值
+----|-----|------|------|------
+interval|倒计时的间隔，单位：秒。需要大于0.5小于60|Number|-|1
+length|倒计时的次数**（必填）**，需要是大于0的整数|Number|-|无
+control|当前倒计时状态控制开关**（必填）**|Number|0: stop，1: pause，2: play，3: replay|无
 
 #### events
 
@@ -164,3 +165,42 @@ timeout|倒计时自然结束|无
 #### slot
 
 倒计时界面内容插槽，用于填充主体内容
+
+### Tabs
+
+选项卡，用于展示多个内容关联，共同组成一个整体的部分内容。
+
+**配合`Tabs-item`使用**
+
+#### props
+
+属性 | 说明 | 类型 | 可选值 | 默认值
+----|-----|------|------|------
+type|选项卡是水平切换还是落地页类型|String|vertical: 落地页，horizontal: 水平切换|vertical
+seq|默认展示的选项卡是第几位，需要不小于零|Number|-|0
+
+### Tabs-item
+
+选项卡的各子项。包括选项卡的标题和对应的内容体。其中，标题对应slot属性为"tab"的标签，内容体插入在组件默认slot内即可。像下面这样：
+
+```HTML
+<tabs-item>
+  <span slot="tab">选项卡标题</span>
+  <div>
+    选项卡内容
+  </div>
+</tabs-item>
+```
+
+#### props
+
+属性 | 说明 | 类型 | 默认值
+----|-----|------|------|------
+index|Tabs-item的唯一标识，用于识别Tabs-item|Number/String|无
+
+#### slot
+
+插槽名|说明|默认值
+-----|---|-----
+默认|选项卡对应内容体|无
+tab|选项卡标题内容|无
