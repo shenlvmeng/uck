@@ -16,7 +16,7 @@
     name: "Link",
     props: {
       to: {
-        type: String,
+        type: [String, Boolean],
         required: true
       },
       router: {
@@ -48,6 +48,10 @@
           return;
         }
         if (e.defaultPrevented) {
+          return;
+        }
+        if (this.to === false) {
+          e.preventDefault();
           return;
         }
 
@@ -87,6 +91,9 @@
     },
     computed: {
       href() {
+        if (this.to === false) {
+          return "#";
+        }
         return this.getParameter('vendor') === '' ?
             this.to : this.transferLink(this.to);
       }
