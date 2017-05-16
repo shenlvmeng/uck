@@ -13,7 +13,7 @@
         type: Number,
         default: 1,
         validator(val) {
-          return val > 0.5 && val < 60;
+          return val >= 0.5 && val < 60;
         }
       },
 

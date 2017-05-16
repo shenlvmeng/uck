@@ -1,6 +1,19 @@
 <template>
   <div>
+    <Tabs
+      :seq="1"
+    >
+      <Tabsitem
+        v-for="(item, index) in [1,2,3]"
+        :index="index"
+        :key="index"
+      >
+        <span slot="tab">选项卡{{index}}</span>
+        Item{{index}}, Item{{index}}, Item{{index}}, Item{{index}}, Item{{index}}, Item{{index}}, Item{{index}}, Item{{index}}, Item{{index}}, Item{{index}}, Item{{index}}, Item{{index}}, Item{{index}}, Item{{index}}, Item{{index}}, Item{{index}}, Item{{index}}, Item{{index}}, Item{{index}}, Item{{index}}, Item{{index}}, Item{{index}}, Item{{index}}, Item{{index}}, Item{{index}}, Item{{index}}, Item{{index}}, Item{{index}}, Item{{index}}, Item{{index}}, Item{{index}}, Item{{index}}, Item{{index}}, Item{{index}}, Item{{index}}, Item{{index}}, Item{{index}}, Item{{index}}, Item{{index}}, Item{{index}}, Item{{index}}, Item{{index}}
+      </Tabsitem>
+    </Tabs>
     <Countdown
+      :interval="0.5"
       :length="10"
       :control="flag"
       @tick="handleTick"
@@ -55,6 +68,12 @@
     >
       Youdao
     </Alink>
+    <Alink
+      :to="false"
+      :onClick="wow"
+    >
+      假链接
+    </Alink>
     <Phoneform
       pvkey="test"
       @success="handleSuccess"
@@ -83,6 +102,7 @@
   import Popup from '../lib/components/popup';
   import Countdown from '../lib/components/countdown/';
   import { Carousel, CarouselItem } from '../lib/components/carousel';
+  import { Tabs, TabsItem } from '../lib/components/tabs/';
 
   export default {
     name: "app",
@@ -101,6 +121,9 @@
           this.count++;
           console.log(`接收到点击事件。count: ${this.count}`);
         };
+      },
+      wow() {
+        alert("So cool!");
       },
       hinter(val) {
         return `Value:${val}`;
@@ -148,7 +171,9 @@
       Alink: Link,
       Slider,
       Popup,
-      Countdown
+      Countdown,
+      Tabs,
+      Tabsitem: TabsItem
     }
   }
 </script>
@@ -156,5 +181,12 @@
   .slider {
     width: 500px;
     padding: 10px 0;
+  }
+  .demo-carousel {
+    height: 250px;
+    line-height: 250px;
+    background-color: steelblue;
+    font-size: 20px;
+    text-align: center;
   }
 </style>
