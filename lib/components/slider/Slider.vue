@@ -131,3 +131,38 @@
     }
   }
 </script>
+<style>
+.uck-slider {
+  position: relative;
+  width: 100%;
+  height: 5px;
+  border: none;
+  border-radius: 2px;
+  background-color: #ddd;
+}
+.uck-slider-track {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background-color: #1cc16d;
+  transition: width .2s;
+}
+.uck-slider-track.disabled {
+  background-color: #ccc;
+}
+.uck-slider-hint {
+  display: none;
+  top: 18px;
+  left: -4px;
+  position: absolute;
+  padding: 0 5px;
+  height: 2em;
+  border-radius: 4px;
+  line-height: 2em;
+  background: rgba(30, 31, 32, 0.8);
+  color: #fff;
+  font-size: 10px;
+  transition: all .2s;
+}
+</style>

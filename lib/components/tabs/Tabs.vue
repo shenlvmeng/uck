@@ -111,3 +111,15 @@
     }
   }
 </script>
+<style>
+.uck-tabs {
+  padding: 10px;
+}
+.uck-tabs-content {
+  height: 60px;
+  padding: 5px;
+  border-bottom: 1px solid #ccc;
+  line-height: 2em;
+  overflow: auto;
+}
+</style>

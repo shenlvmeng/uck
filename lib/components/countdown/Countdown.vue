@@ -97,3 +97,8 @@
     }
   }
 </script>
+<style>
+.uck-countdown {
+  font-size: 25px;
+}
+</style>

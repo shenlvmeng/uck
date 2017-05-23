@@ -54,3 +54,23 @@
     }
   }
 </script>
+<style>
+.uck-tabs-nav {
+  overflow: hidden;
+  border-bottom: 1px solid #ccc;
+}
+.uck-tabs-nav-tab {
+  float: left;
+  padding: 0 10px;
+  line-height: 2.5em;
+  color: #aaa;
+  text-align: center;
+  cursor: pointer;
+}
+.uck-tabs-nav-tab:hover {
+  color: #555;
+}
+.uck-tabs-nav-tab.active {
+  color: #1cca6d;
+}
+</style>

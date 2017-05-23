@@ -31,3 +31,9 @@
     }
   }
 </script>
+<style>
+.uck-carousel-item {
+  float: left;
+  height: auto;
+}
+</style>

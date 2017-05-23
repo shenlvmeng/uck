@@ -3,14 +3,14 @@
     <Tabs
       :seq="1"
     >
-      <Tabsitem
+      <tabs-item
         v-for="(item, index) in [1,2,3]"
         :index="index"
         :key="index"
       >
         <span slot="tab">选项卡{{index}}</span>
         Item{{index}}, Item{{index}}, Item{{index}}, Item{{index}}, Item{{index}}, Item{{index}}, Item{{index}}, Item{{index}}, Item{{index}}, Item{{index}}, Item{{index}}, Item{{index}}, Item{{index}}, Item{{index}}, Item{{index}}, Item{{index}}, Item{{index}}, Item{{index}}, Item{{index}}, Item{{index}}, Item{{index}}, Item{{index}}, Item{{index}}, Item{{index}}, Item{{index}}, Item{{index}}, Item{{index}}, Item{{index}}, Item{{index}}, Item{{index}}, Item{{index}}, Item{{index}}, Item{{index}}, Item{{index}}, Item{{index}}, Item{{index}}, Item{{index}}, Item{{index}}, Item{{index}}, Item{{index}}, Item{{index}}, Item{{index}}
-      </Tabsitem>
+      </tabs-item>
     </Tabs>
     <Countdown
       :interval="0.5"
@@ -79,18 +79,18 @@
       @success="handleSuccess"
     ></Phoneform>
     <Carousel :autoplay="true" :speed="1500" navi="inside" trigger="hover" arrow="hover">
-      <Carouselitem>
+      <carousel-item>
         <div class="demo-carousel">1</div>
-      </Carouselitem>
-      <Carouselitem>
+      </carousel-item>
+      <carousel-item>
         <div class="demo-carousel">2</div>
-      </Carouselitem>
-      <Carouselitem>
+      </carousel-item>
+      <carousel-item>
         <div class="demo-carousel">3</div>
-      </Carouselitem>
-      <Carouselitem>
+      </carousel-item>
+      <carousel-item>
         <div class="demo-carousel">4</div>
-      </Carouselitem>
+      </carousel-item>
     </Carousel>
   </div>
 </template>
@@ -167,13 +167,13 @@
     components: {
       Carousel,
       Phoneform: Form,
-      Carouselitem: CarouselItem,
+      CarouselItem,
       Alink: Link,
       Slider,
       Popup,
       Countdown,
       Tabs,
-      Tabsitem: TabsItem
+      TabsItem
     }
   }
 </script>

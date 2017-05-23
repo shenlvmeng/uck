@@ -100,3 +100,12 @@
     }
   }
 </script>
+<style>
+.uck-link:hover,
+.uck-link:visited,
+.uck-link:link,
+.uck-link:active {
+  text-decoration: none;
+  color: inherit;
+}
+</style>

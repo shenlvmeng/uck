@@ -119,3 +119,35 @@
     }
   }
 </script>
+<style>
+.uck-slider-btn {
+  position: absolute;
+  top: -3px;
+  width: 12px;
+  height: 12px;
+  border-radius: 6px;
+  background-color: #1cc16d;
+  transition: all .2s;
+}
+.uck-slider-btn.hover,
+.uck-slider-btn.down {
+  background-color: #0aa05b;
+  top: -5px;
+  width: 16px;
+  height: 16px;
+  border-radius: 8px;
+}
+.uck-slider-btn.hover {
+  cursor: -webkit-grab;
+}
+.uck-slider-btn.down {
+  cursor: -webkit-grabbing;
+}
+.uck-slider-btn.disabled {
+  background-color: #ddd;
+  cursor: not-allowed;
+}
+.uck-slider-btn:hover .uck-slider-hint{
+  display: block;
+}
+</style>

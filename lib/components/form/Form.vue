@@ -242,3 +242,30 @@
     }
   }
 </script>
+<style>
+.uck-form,
+.uck-form-input,
+.uck-form-submit {
+  display: block;
+}
+.uck-form {
+  padding: 0.5em 1em;
+}
+.uck-form-input {
+  padding: 0.5em 0;
+  line-height: 2em;
+}
+.uck-form-input-checkcode {
+  position: relative;
+}
+.uck-form-submit {
+  margin: 0 auto;
+  width: 10em;
+  padding: 0.5em 2em;
+}
+.uck-form-hidden {
+  width: 0;
+  height: 0;
+  border: none;
+}
+</style>

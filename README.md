@@ -35,9 +35,9 @@ cd useful-components-kit
 
 组件资源位于`lib/components`路径下。示范用法在`src/App.vue`中。
 
+- 根据需要从`lib/components`路径下引入需要的组件，根据项目需要自行修改
 - 在`src/`下开始工作，书写自己的组件，路由等功能
 - 在`src/main.js`中完成组织工作
-- 在`lib/assets/common.css`中修改组件默认样式，注意命名格式
 - 在`index.html`根据需要添加外部js等资源文件
 
 ```bash
