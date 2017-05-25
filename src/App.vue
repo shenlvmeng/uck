@@ -60,24 +60,6 @@
       >
       </Slider>
     </div>
-    <Alink
-      to="http://youdao.com"
-      :_blank="true"
-      :onClick="print().bind(this)"
-      rlog="test"
-    >
-      Youdao
-    </Alink>
-    <Alink
-      :to="false"
-      :onClick="wow"
-    >
-      假链接
-    </Alink>
-    <Phoneform
-      pvkey="test"
-      @success="handleSuccess"
-    ></Phoneform>
     <Carousel :autoplay="true" :speed="1500" navi="inside" trigger="hover" arrow="hover">
       <carousel-item>
         <div class="demo-carousel">1</div>
@@ -108,7 +90,6 @@
     name: "app",
     data() {
       return {
-        count: 0,
         popup: true,
         timer: 10,
         flag: 0,
@@ -116,15 +97,6 @@
       }
     },
     methods: {
-      print() {
-        return (e) => {
-          this.count++;
-          console.log(`接收到点击事件。count: ${this.count}`);
-        };
-      },
-      wow() {
-        alert("So cool!");
-      },
       hinter(val) {
         return `Value:${val}`;
       },
@@ -136,9 +108,6 @@
       },
       handlePopup({ hidden }) {
         this.popup = hidden;
-      },
-      handleSuccess({ num, name, code, addr }) {
-        alert(`Wow, success!${num}, ${name}, ${code}, ${addr}`);
       },
       handleTick({ remain }) {
         this.timer = remain;
@@ -166,9 +135,7 @@
     },
     components: {
       Carousel,
-      Phoneform: Form,
       CarouselItem,
-      Alink: Link,
       Slider,
       Popup,
       Countdown,
