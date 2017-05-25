@@ -40,53 +40,10 @@ shift|幻灯片切换时触发|oldVal: 改变前的索引, val:改变后的索�
 
 属性 | 说明 | 类型 | 默认值
 ----|-----|------|-----
-type|图标类型**(必填)**，参考[Font Awesome](http://fontawesome.io/icons/)|String|无
+type|图标类型(**必填**)，参考[Font Awesome](http://fontawesome.io/icons/)|String|无
 color|图标颜色|String|`#000`
 size|图标大小|Number, String|使用场景的字体大小
 aria|`aria-hidden`的属性值|Boolean|`true`
-
-### Form
-
-提交到后台表单系统的form表单。包含手机号，验证码，姓名（可选），地址（可选）。
-
-#### props
-
-属性 | 说明 | 类型 | 默认值
-----|-----|------|-----
-pvkey|后台标志字段**（必填）**|String|无
-hasName|是否带姓名字段**（必填）**|Boolean|`false`
-hasAddr|是否带地址字段**（必填）**|Boolean|`false`
-countKey|计数功能标志字段|String|无需计数时留空
-
-#### events
-
-事件名|说明|回调参数
------|---|-----
-type|输入框focus时触发，用于避免软键盘遮挡内容|type: 当前输入框类型
-success|提交成功|num: 手机号, code: 验证码, name: 姓名, addr: 住址
-
-### Link
-
-带有rlog动作、vendor信息或前端路由的`<a>`标签。
-
-#### props
-
-属性 | 说明 | 类型 | 默认值
-----|-----|------|-----
-to|跳转链接**（必填）**|String/Boolean|无
-router|前端路由|Object|`null`
-onClick|点击事件处理函数|Function|
-rlog|rlog动作信息|String|
-_blank|是否在新页面打开|Boolean|`true`
-
-值得注意的是
-1. `to`填写的路由根据Vue-router的工作模式决定（hash或history）
-2. 在前端路由假链接且未使用前端路由时，为`to`指定`false`
-3. `onClick`在传入时需要注意`this`指向的问题。
-
-#### slot
-
-链接内容插槽，插入实际内容，如文本，图片等。
 
 ### Slider
 
@@ -149,8 +106,8 @@ content|弹窗内容体|见示例效果
 属性 | 说明 | 类型 | 可选值 | 默认值
 ----|-----|------|------|------
 interval|倒计时的间隔，单位：秒。需要大于0.5小于60|Number|-|1
-length|倒计时的次数**（必填）**，需要是大于0的整数|Number|-|无
-control|当前倒计时状态控制开关**（必填）**|Number|0: stop，1: pause，2: play，3: replay|无
+length|倒计时的次数（**必填**），需要是大于0的整数|Number|-|无
+control|当前倒计时状态控制开关（**必填**）|Number|0: stop，1: pause，2: play，3: replay|无
 
 #### events
 
